@@ -1,0 +1,48 @@
+$font-stack: Helvetica, Arial, sans-serif;
+$main-color: #333;
+$link-color: #03536A;
+.hover-text {
+  text-decoration: underline;
+  text-decoration-color: #C6C6C6;
+  color: lighten($link-color, 20%);
+}
+
+body {
+  font-family: $font-stack;
+  font-weight: 100;
+  color: $main-color;
+}
+
+.header {
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.header > * {
+  margin: 16px;
+}
+
+a {
+  color:  $link-color;
+  text-decoration: none;
+  &:hover {
+    @extend .hover-text;
+  }
+}
+
+.sort-list:hover {
+  @extend .hover-text;
+  cursor: pointer;
+}
+
+.active {
+  color: $link-color;
+  border-bottom: 6px solid #03536A;
+  &::after {
+    content: '▼';
+  }
+}
+
+.inactive {
+  color: $link-color;
+}
